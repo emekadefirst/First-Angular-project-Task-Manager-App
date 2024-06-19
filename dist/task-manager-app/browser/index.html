@@ -1,0 +1,31 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html ng-app="taskManagerApp" data-critters-container>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="styles.scss">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="app/app.module.js"></script>
+  <script src="app/app.controller.js"></script>
+<style>body{font-family:Arial,sans-serif;background-color:#f8f9fa;color:#333}.container{max-width:600px;margin:50px auto;padding:20px;background-color:#fff;border:1px solid #ddd;border-radius:5px;box-shadow:0 2px 4px #0000001a}.container h1{text-align:center;color:#007bff}.container form{display:flex;margin-bottom:20px}.container form input[type=text]{flex:1;padding:10px;border:1px solid #ccc;border-radius:4px}.container form button{padding:10px 20px;background-color:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer}.container form button:hover{background-color:#0062cc}.container ul{list-style:none;padding:0}.container ul li{display:flex;align-items:center;justify-content:space-between;padding:10px;border-bottom:1px solid #ddd}.container ul li:last-child{border-bottom:none}.container ul li span{flex:1}.container ul li button{margin-left:10px;padding:5px 10px;border:none;border-radius:4px;cursor:pointer;color:#fff}.container ul li button:first-of-type{background-color:#007bff}.container ul li button:first-of-type:hover{background-color:#0062cc}.container ul li button:last-of-type{background-color:#dc3545}.container ul li button:last-of-type:hover{background-color:#c82333}</style><link rel="stylesheet" href="styles-SYIPPBTA.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-SYIPPBTA.css"></noscript></head>
+
+<body ng-controller="TaskController">
+  <div class="container">
+    <h1>Task Manager</h1>
+    <form ng-submit="addTask()">
+      <input type="text" ng-model="newTask" placeholder="Add new task" required>
+      <button type="submit">Add Task</button>
+    </form>
+    <ul>
+      <li ng-repeat="task in tasks">
+        <span ng-class="{ completed: task.completed }">{{ task.name }}</span>
+        <button ng-click="toggleCompletion(task)">Toggle</button>
+        <button ng-click="removeTask($index)">Delete</button>
+      </li>
+    </ul>
+  </div>
+<script src="polyfills-6EAL64PA.js" type="module"></script><script src="main-EFA4ICBM.js" type="module"></script></body>
+
+</html>

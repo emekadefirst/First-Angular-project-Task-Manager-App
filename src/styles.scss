@@ -1,1 +1,103 @@
 /* You can add global styles to this file, and also import other style files */
+// styles/styles.scss
+$primary-color: #007bff;
+$completed-color: #28a745;
+$button-bg-color: #dc3545;
+$button-hover-bg-color: #c82333;
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    h1 {
+        text-align: center;
+        color: $primary-color;
+    }
+
+    form {
+        display: flex;
+        margin-bottom: 20px;
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: $primary-color;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken($primary-color, 10%);
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            span {
+                flex: 1;
+
+                &.completed {
+                    text-decoration: line-through;
+                    color: $completed-color;
+                }
+            }
+
+            button {
+                margin-left: 10px;
+                padding: 5px 10px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                color: #fff;
+
+                &:first-of-type {
+                    background-color: $primary-color;
+
+                    &:hover {
+                        background-color: darken($primary-color, 10%);
+                    }
+                }
+
+                &:last-of-type {
+                    background-color: $button-bg-color;
+
+                    &:hover {
+                        background-color: $button-hover-bg-color;
+                    }
+                }
+            }
+        }
+    }
+}
